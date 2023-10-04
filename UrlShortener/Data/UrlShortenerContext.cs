@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.IO.Pipelines;
 using UrlShortener.Entities;
 
 namespace UrlShortener.Data
@@ -17,12 +18,15 @@ namespace UrlShortener.Data
     {
         XYZ karen = new XYZ()
         {
-            
+            Id = 1,
             Url = "http://www.google.com.ar",
             UrlShort = ""
             
         };
 
-  
+       
+       
+
+
     }
 }

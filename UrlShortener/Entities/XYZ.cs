@@ -10,5 +10,7 @@ namespace UrlShortener.Entities
         [Required]
         public string? Url { get; set; }
         public string? UrlShort { get; set; }
+
+        public int? Id { get; set; }
     }
 }
