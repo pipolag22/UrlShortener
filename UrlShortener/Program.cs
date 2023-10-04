@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace UrlShortener
 {
     public class Program
@@ -12,8 +14,8 @@ namespace UrlShortener
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<AgendaContext>(dbContextOptions => dbContextOptions.UseSqlite(
-    builder.Configuration["ConnectionStrings:AgendaAPIDBConnectionString"]));
+            builder.Services.AddDbContext<UrlShortener>(dbContextOptions => dbContextOptions.UseSqlite(
+            builder.Configuration["ConnectionStrings:UrlShortenerDBConnectionString"]));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
