@@ -442,11 +442,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\repositorio\\UrlShortener\\UrlShortener\\UrlShortener.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Source\\Repos\\UrlShortenerPipo\\UrlShortener\\UrlShortener.csproj",
       "projectName": "UrlShortener",
-      "projectPath": "C:\\Users\\Usuario\\Desktop\\repositorio\\UrlShortener\\UrlShortener\\UrlShortener.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Source\\Repos\\UrlShortenerPipo\\UrlShortener\\UrlShortener.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\Desktop\\repositorio\\UrlShortener\\UrlShortener\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Source\\Repos\\UrlShortenerPipo\\UrlShortener\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -499,7 +499,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
