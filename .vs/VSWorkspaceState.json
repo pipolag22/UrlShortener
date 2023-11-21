@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github\\workflows",
+    "\\UrlShortener",
+    "\\UrlShortener\\bin\\Debug",
+    "\\UrlShortener\\Entities",
+    "\\UrlShortener\\obj"
+  ],
+  "SelectedNode": "\\UrlShortener\\UrlShortener.csproj",
+  "PreviewInSolutionExplorer": false
+}

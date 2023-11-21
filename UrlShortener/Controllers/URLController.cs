@@ -1,13 +1,18 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using UrlShortener.Data;
-using UrlShortener.Entities;
 using UrlShortener.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace UrlShortener.Controllers
 {
-    public class URLController
+
+    [Route("api/[controller]")]
+    [ApiController]
+    [Authorize]
+
+    public class URLController : ControllerBase
     {
         private readonly UrlShortenerContext _context;
         private readonly UrlServices _services;
@@ -27,7 +32,7 @@ namespace UrlShortener.Controllers
 
             if (URLUser.Length > 6) //codigo para ver si es mayor a 6 digitos
             {
-                if (_context.URLs.Any(u => u.URLLong == URLUser))    //codigo para ver si esta en la base de datos
+                if (_context.URLs.Any(u => u.UrlLong == URLUser))    //codigo para ver si esta en la base de datos
                 {
 
                     int contador = _services.SumarContador(URLUser);
@@ -46,7 +51,7 @@ namespace UrlShortener.Controllers
             }
             else
             {
-                if (_context.URLs.Any(u => u.URLShort == URLUser))
+                if (_context.URLs.Any(u => u.UrlShort == URLUser))
                 {
                     string URLLong = _services.GetURLLongForShort(URLUser);
                     int contador = _services.SumarContador(URLUser);
@@ -74,35 +79,6 @@ namespace UrlShortener.Controllers
 
 
             return Ok(_services.GetUrlsPorUsuario(IdUser));
-        }
-
-
-        [HttpPut("Free-URL")]
-        [AllowAnonymous]
-
-        public IActionResult FreeURL([FromBody] string URL)
-        {
-
-
-            int? IdUser = int.TryParse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value, out var userId) ? userId : (int?)null;
-            if (IdUser.HasValue)
-            {
-
-                return Ok(POSTURL(URL, "Sin Categoria")
-);
-            }
-            else
-            {
-                if (_context.URLs.Any(u => u.URLShort == URL))
-                {
-                    string URLLong = _services.GetURLLongForShort(URL);
-                    int contador = _services.SumarContador(URL);
-                    return Ok(URLLong);
-                }
-                else return BadRequest("La URL no se encuentra en la  base de datos.");
-            }
-
-
         }
     }
 }

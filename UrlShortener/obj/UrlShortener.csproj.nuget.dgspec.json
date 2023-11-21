@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Source\\Repos\\UrlShortenerPipo\\UrlShortener\\UrlShortener.csproj": {}
+    "C:\\Users\\Usuario\\source\\repos\\UrlShortenerPipo\\UrlShortener\\UrlShortener.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Source\\Repos\\UrlShortenerPipo\\UrlShortener\\UrlShortener.csproj": {
+    "C:\\Users\\Usuario\\source\\repos\\UrlShortenerPipo\\UrlShortener\\UrlShortener.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Source\\Repos\\UrlShortenerPipo\\UrlShortener\\UrlShortener.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\UrlShortenerPipo\\UrlShortener\\UrlShortener.csproj",
         "projectName": "UrlShortener",
-        "projectPath": "C:\\Users\\Usuario\\Source\\Repos\\UrlShortenerPipo\\UrlShortener\\UrlShortener.csproj",
+        "projectPath": "C:\\Users\\Usuario\\source\\repos\\UrlShortenerPipo\\UrlShortener\\UrlShortener.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Source\\Repos\\UrlShortenerPipo\\UrlShortener\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\source\\repos\\UrlShortenerPipo\\UrlShortener\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,39 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.0.3, )"
             }
           },
           "imports": [

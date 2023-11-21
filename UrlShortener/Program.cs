@@ -2,6 +2,9 @@
 using System.Text.Json.Serialization;
 using UrlShortener.Data;
 using UrlShortener.Services;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace UrlShortener
 {
@@ -31,7 +34,7 @@ namespace UrlShortener
                 {
                     Type = SecuritySchemeType.Http,
                     Scheme = "Bearer",
-                    Description = "escribir token para logearse."
+                    Description = "pegar token"
                 });
 
                 setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -50,11 +53,11 @@ namespace UrlShortener
 
             #region DependencyInjections
             builder.Services.AddScoped<UrlServices>();
-            builder.Services.AddScoped<UserServices>();
+            builder.Services.AddScoped<UserServices>(); 
             #endregion
 
             builder.Services.AddDbContext<UrlShortenerContext>(dbContextOptions => dbContextOptions.UseSqlite(
-                builder.Configuration["ConnectionStrings:shorter1DBConnectionString"]));
+                builder.Configuration["ConnectionStrings:shortenerDBConnectionString"]));
 
             builder.Services.AddAuthentication("Bearer") //"Bearer" es el tipo de auntenticaci�n que tenemos que elegir despu�s en PostMan para pasarle el token
             .AddJwtBearer(options => //Ac� definimos la configuraci�n de la autenticaci�n. le decimos qu� cosas queremos comprobar. La fecha de expiraci�n se valida por defecto.

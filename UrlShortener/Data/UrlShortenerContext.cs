@@ -2,6 +2,8 @@
 
 using UrlShortener.Entities;
 using UrlShortener.Models.Enum;
+using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace UrlShortener.Data
 {
@@ -19,12 +21,12 @@ namespace UrlShortener.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            Categoria Trabajo = new Categoria()
+            Category Pelicula = new Category()
             {
                 Id = 1,
                 Name = "peliculas"
             };
-            Categoria Diversion = new Categoria()
+            Category Cualquiera = new Category()
             {
                 Id = 2,
                 Name = "cualquiera"
@@ -55,8 +57,26 @@ namespace UrlShortener.Data
                 RolUser = Role.Guest
 
             };
+            Url url = new Url()
+            {
+                Id = 1,
+                UrlShort = "www.google.com.ar",
+                UrlLong = "sadSaD1f",
+                contador = 0,
+                IdCategoria = Cualquiera.Id,
+                IdUser = Usuario1.Id
+            };
+            Url url1 = new Url()
+            {
+                Id = 2,
+                UrlShort = "www.elbananero.com",
+                UrlLong = "as9f9pa3rmf",
+                contador = 1,
+                IdCategoria = Pelicula.Id,
+                IdUser = Usuario2.Id
 
-           
+            };
+
 
             modelBuilder.Entity<Url>()
             .HasOne(c => c.User)
@@ -70,8 +90,8 @@ namespace UrlShortener.Data
 
 
 
-            modelBuilder.Entity<Categoria>().HasData(Trabajo, Diversion);
-           
+            modelBuilder.Entity<Category>().HasData(Pelicula, Cualquiera);
+            modelBuilder.Entity<Url>().HasData(url, url1);
             modelBuilder.Entity<User>().HasData(Usuario1, Usuario2, Usuario3);
 
             base.OnModelCreating(modelBuilder);

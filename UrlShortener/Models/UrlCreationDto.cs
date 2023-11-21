@@ -1,6 +1,12 @@
-﻿namespace UrlShortener.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace UrlShortener.Models
 {
-    public class XYZForCreationDto
+    public class UrlCreationDto
     {
+        [Required]
+        public int URL { get; set; }
+
+        public int? ID { get; set; }
     }
 }
