@@ -84,5 +84,11 @@ namespace UrlShortener.Services
 
             return URLLong;
         }
+        public List<string> GetUrls()
+        {
+            List<string> todasLasURLS = _context.URLs.Select(x => x.UrlLong).ToList();
+
+            return todasLasURLS;
+        }
     }
 }

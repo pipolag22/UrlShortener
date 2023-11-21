@@ -4,6 +4,7 @@ using System.Security.Claims;
 using UrlShortener.Data;
 using UrlShortener.Services;
 using Microsoft.AspNetCore.Authorization;
+using UrlShortener.Entities;
 
 namespace UrlShortener.Controllers
 {
@@ -76,9 +77,13 @@ namespace UrlShortener.Controllers
         {
             int IdUser = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
 
-
-
             return Ok(_services.GetUrlsPorUsuario(IdUser));
+        }
+        [HttpGet("Todas-Las-Urls")]
+        [AllowAnonymous]
+        public IActionResult GetUrls()
+        {
+            return Ok(_services.GetUrls());
         }
     }
 }
